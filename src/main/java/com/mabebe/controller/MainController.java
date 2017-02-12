@@ -17,7 +17,7 @@ public class MainController {
     private MemberRepository memberRepository;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String runMainApplication(Model model) {
+    public String ctrRoot(Model model) {
         model.addAttribute("member", memberRepository.findAll());
 
         log.debug("Here?");

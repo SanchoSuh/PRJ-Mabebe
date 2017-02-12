@@ -1,0 +1,14 @@
+#id_username {
+    font-size : 16px;
+    font-family : Arial, Helvetica, sans-serif;
+}
+
+.username_text {
+    font-size : 16px;
+    font-family : Arial, Helvetica, sans-serif;
+}
+
+.login_layout_header {
+    padding-top : 100px;
+    padding-bottom : 50px;
+}

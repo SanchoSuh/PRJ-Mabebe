@@ -2,6 +2,8 @@ package com.mabebe.domain.member;
 
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
@@ -14,7 +16,7 @@ public class Member {
     private long memberid;
 
     @Column(unique=true, nullable=false, length=30)
-    private String email;
+    private String emailId;
 
     @Column(nullable=false, length=20)
     private String password;

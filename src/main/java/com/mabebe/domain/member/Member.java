@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class Member {
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    private long memberid;
+    private long memberId;
 
     @Column(unique=true, nullable=false, length=30)
     private String emailId;

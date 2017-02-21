@@ -2,6 +2,7 @@ package com.mabebe.controller;
 
 import com.mabebe.domain.member.MemberRepository;
 import com.mabebe.domain.member.MemberService;
+import com.mabebe.domain.member.Member;
 import com.mabebe.exception.MBBMemberException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ui.Model;
@@ -29,7 +30,6 @@ public class MemberController {
         boolean result = memberService.login(email, password);
 
         if(result == true) {
-
             return "redirect:/";
         }
         else
@@ -38,13 +38,19 @@ public class MemberController {
 
     @RequestMapping(value="/signup", method=RequestMethod.GET)
     public String signUpForm(Model model) {
+        log.info("in signUpForm() controller");
 
-        return "/signup";
+        return "/member/signupForm";
     }
 
     @RequestMapping(value="/signup", method=RequestMethod.POST)
-    public String signUp(Model model) {
+    public String signUp(Member member, Model model) throws MBBMemberException {
+        log.info("in signUp() controller");
+        boolean result = memberService.signup(member);
 
-        return "/signup";
+        if(result == true) {
+            return "redirect:/";
+        } else
+            return "";
     }
 }

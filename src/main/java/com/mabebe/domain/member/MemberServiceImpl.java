@@ -33,7 +33,7 @@ public class MemberServiceImpl implements MemberService {
             throw new MBBMemberException("EmailId not found");
         }
 
-        if(member.getPassword().equals(password)) {
+        if(member.equalPassword(password)) {
             log.debug("password correct");
             // Set cookie
 

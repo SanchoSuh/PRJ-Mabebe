@@ -46,11 +46,13 @@ public class MemberController {
     @RequestMapping(value="/signup", method=RequestMethod.POST)
     public String signUp(Member member, Model model) throws MBBMemberException {
         log.info("in signUp() controller");
+        log.info("Member : " + member);
+
         boolean result = memberService.signup(member);
 
         if(result == true) {
             return "redirect:/";
         } else
-            return "";
+            return "/member/signupForm";
     }
 }

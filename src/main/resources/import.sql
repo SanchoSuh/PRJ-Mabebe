@@ -1,2 +1,2 @@
-INSERT INTO MEMBER (MEMBER_ID, EMAIL_ID, PASSWORD, IS_DELETED) VALUES (1, 'sancho@san.com', 'test', false);
-INSERT INTO MEMBER (MEMBER_ID, EMAIL_ID, PASSWORD, IS_DELETED) VALUES (2, 'inyong@san.com', 'test', false);
+INSERT INTO MEMBER (EMAIL_ID, PASSWORD, IS_DELETED) VALUES ('sancho@san.com', 'test', false);
+INSERT INTO MEMBER (EMAIL_ID, PASSWORD, IS_DELETED) VALUES ('inyong@san.com', 'test', false);

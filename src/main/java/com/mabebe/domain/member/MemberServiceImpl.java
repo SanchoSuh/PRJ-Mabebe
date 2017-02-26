@@ -45,11 +45,15 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public boolean signup(Member member) throws MBBMemberException {
+        Member tempMember = memberRepository.findByEmailId(member.getEmailId());
 
-        try {
-            memberRepository.save(member); // todo: Form에서 Member 객체로 받을 수 없다. Member로 만들어줘야 하나?
-        } catch(Exception e) { throw new MBBMemberException("member save exception"); }
-
-        return true;
+        if(tempMember != null && !tempMember.equals("")) {
+            log.info("signup : same emailID found while signup");
+            return false;
+        } else {
+            log.info("signup : save()");
+            memberRepository.save(member);
+            return true;
+        }
     }
 }

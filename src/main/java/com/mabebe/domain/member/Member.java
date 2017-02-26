@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Entity
 public class Member {
     @Id
-    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long memberId;
 
     @Column(unique=true, nullable=false, length=30)

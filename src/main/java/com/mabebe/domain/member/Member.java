@@ -26,6 +26,13 @@ public class Member {
     @Column(name = "deleted")
     private boolean deleted;
 
+    public Member(long memberId, String emailId, String password, boolean deleted) {
+        this.memberId = memberId;
+        this.emailId = emailId;
+        this.password = password;
+        this.deleted = deleted;
+    }
+
     public boolean equalPassword(String inputPassword) {
         if(this.password.equals(inputPassword))
             return true;

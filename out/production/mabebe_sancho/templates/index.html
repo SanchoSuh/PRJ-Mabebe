@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+ {{ > /include/header }}
+</head>
+
+<body>
+{{ > /include/body_logo }}
+{{ > /include/body_navbar }}
+
+<div class = "container-fluid">
+
+    <!-- Main body parts embraced with Bootstrap container -->
+
+    <div class = "row" id="lightgrey-bg">
+
+        {{ > /post/body_main }}
+
+    </div>
+
+    <!-- Footer -->
+    {{ > /include/body_footer }}
+
+</div>
+
+{{ > /include/body_js }}
+
+</body>
+
+</html>

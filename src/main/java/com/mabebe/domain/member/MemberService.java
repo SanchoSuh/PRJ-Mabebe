@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface MemberService {
     <T extends Member> List<T> findAll();
-
     <T extends Member> T findByEmailId(String emailId);
+    void save(Member member);
 
     boolean login(String id, String password) throws MBBMemberException;
 

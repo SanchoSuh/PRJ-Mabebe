@@ -26,6 +26,8 @@ public class Member {
     @Column(name = "deleted")
     private boolean deleted;
 
+    public Member() {};
+
     public Member(long memberId, String emailId, String password, boolean deleted) {
         this.memberId = memberId;
         this.emailId = emailId;

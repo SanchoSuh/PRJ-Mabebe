@@ -26,6 +26,11 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    public void save(Member member) {
+        memberRepository.save(member);
+    }
+
+    @Override
     public boolean login(String id, String password) throws MBBMemberException {
         Member member = memberRepository.findByEmailId(id);
 
@@ -46,12 +51,13 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public boolean signup(Member member) throws MBBMemberException {
         Member tempMember = memberRepository.findByEmailId(member.getEmailId());
+        log.info("tempMember : " + tempMember);
 
         if(tempMember != null && !tempMember.equals("")) {
-            log.info("signup : same emailID found while signup");
+            log.info("signup : same emailID found while signup. TempMember : " + tempMember);
             return false;
         } else {
-            log.info("signup : save()");
+            log.info("signup : save(). Member : " + member);
             memberRepository.save(member);
             return true;
         }
